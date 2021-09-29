@@ -31328,6 +31328,8 @@ $parcel$ReactRefreshHelpers$8dd4.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "RegistrationView", ()=>RegistrationView
+);
 var _jsxRuntime = require("react/jsx-runtime");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
@@ -31338,277 +31340,284 @@ var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _reactRouterDom = require("react-router-dom");
-_axiosDefault.default.post('https://stormy-taiga-55813.herokuapp.com/', {
-    Username: username,
-    Password: password,
-    Email: email,
-    Birthday: birthday
-}).then((response)=>{
-    const data = response.data;
-    console.log(data);
-    window.open('/', '_self');
-// so the page will open in the current tab
-}).catch((e)=>{
-    console.log('error registering the user');
-});
-exports.default = RegistrationView;
-return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
-    __source: {
-        fileName: "src/components/registration-view/registration-view.jsx",
-        lineNumber: 26
-    },
-    __self: undefined,
-    children: [
-        /*#__PURE__*/ _jsxRuntime.jsx(Row, {
-            __source: {
-                fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 27
-            },
-            __self: undefined,
-            children: /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+function RegistrationView(props) {
+    function handleSubmit(e) {
+        e.preventDefault();
+        _axiosDefault.default.post('https://stormy-taiga-55813.herokuapp.com/users', {
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday
+        }).then((response)=>{
+            const data = response.data;
+            console.log(data);
+            window.open('/', '_self');
+        // so the page will open in the current tab
+        }).catch((e1)=>{
+            console.log('error registering the user');
+        });
+    }
+    return(/*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
+        __source: {
+            fileName: "src/components/registration-view/registration-view.jsx",
+            lineNumber: 29
+        },
+        __self: this,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsx(Row, {
                 __source: {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 28
+                    lineNumber: 30
                 },
-                __self: undefined,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 29
-                        },
-                        __self: undefined,
-                        children: "Name:"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                        type: "text",
-                        value: name,
-                        onChange: (e)=>setName(e.target.value)
-                        ,
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 30
-                        },
-                        __self: undefined
-                    }),
-                    Object.keys(nameError).map((key)=>{
-                        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 31
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 32
+                            },
+                            __self: this,
+                            children: "Name:"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                            type: "text",
+                            value: name,
+                            onChange: (e)=>setName(e.target.value)
+                            ,
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
                                 lineNumber: 33
                             },
-                            __self: undefined,
-                            children: nameError[key]
-                        }));
-                    })
-                ]
-            })
-        }),
-        /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-            __source: {
-                fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 41
-            },
-            __self: undefined,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                    __source: {
-                        fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 42
-                    },
-                    __self: undefined,
-                    children: "Username:"
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                    type: "text",
-                    value: username,
-                    onChange: (e)=>setUsername(e.target.value)
-                    ,
-                    __source: {
-                        fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 43
-                    },
-                    __self: undefined
-                }),
-                Object.keys(usernameError).map((key)=>{
-                    return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 46
-                        },
-                        __self: undefined,
-                        children: usernameError[key]
-                    }));
+                            __self: this
+                        }),
+                        Object.keys(nameError).map((key)=>{
+                            return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                __source: {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 36
+                                },
+                                __self: this,
+                                children: nameError[key]
+                            }));
+                        })
+                    ]
                 })
-            ]
-        }),
-        /*#__PURE__*/ _jsxRuntime.jsx(Row, {
-            __source: {
-                fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 53
-            },
-            __self: undefined,
-            children: /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
                 __source: {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 54
+                    lineNumber: 43
                 },
-                __self: undefined,
+                __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 55
+                            lineNumber: 44
                         },
-                        __self: undefined,
-                        children: "Create Password:"
+                        __self: this,
+                        children: "Username:"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                        type: "password",
-                        value: password,
-                        onChange: (e)=>setPassword(e.target.value)
+                        type: "text",
+                        value: username,
+                        onChange: (e)=>setUsername(e.target.value)
                         ,
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 56
+                            lineNumber: 45
                         },
-                        __self: undefined
+                        __self: this
                     }),
-                    Object.keys(passwordError).map((key)=>{
+                    Object.keys(usernameError).map((key)=>{
                         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 59
+                                lineNumber: 48
                             },
-                            __self: undefined,
-                            children: passwordError[key]
+                            __self: this,
+                            children: usernameError[key]
                         }));
                     })
                 ]
-            })
-        }),
-        /*#__PURE__*/ _jsxRuntime.jsx(Row, {
-            __source: {
-                fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 67
-            },
-            __self: undefined,
-            children: /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx(Row, {
                 __source: {
                     fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 68
+                    lineNumber: 55
                 },
-                __self: undefined,
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 56
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 57
+                            },
+                            __self: this,
+                            children: "Create Password:"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                            type: "password",
+                            value: password,
+                            onChange: (e)=>setPassword(e.target.value)
+                            ,
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 58
+                            },
+                            __self: this
+                        }),
+                        Object.keys(passwordError).map((key)=>{
+                            return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                __source: {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 61
+                                },
+                                __self: this,
+                                children: passwordError[key]
+                            }));
+                        })
+                    ]
+                })
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx(Row, {
+                __source: {
+                    fileName: "src/components/registration-view/registration-view.jsx",
+                    lineNumber: 69
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 70
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 71
+                            },
+                            __self: this,
+                            children: "Email:"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                            type: "email",
+                            value: email,
+                            onChange: (e)=>setEmail(e.target.value)
+                            ,
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 72
+                            },
+                            __self: this
+                        }),
+                        Object.keys(emailError).map((key)=>{
+                            return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                __source: {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 75
+                                },
+                                __self: this,
+                                children: emailError[key]
+                            }));
+                        })
+                    ]
+                })
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                __source: {
+                    fileName: "src/components/registration-view/registration-view.jsx",
+                    lineNumber: 83
+                },
+                __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 69
+                            lineNumber: 84
                         },
-                        __self: undefined,
-                        children: "Email:"
+                        __self: this,
+                        children: "Birthdate:"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                        type: "email",
-                        value: email,
-                        onChange: (e)=>setEmail(e.target.value)
+                        type: "date",
+                        value: birthdate,
+                        onChange: (e)=>setBirthdate(e.target.value)
                         ,
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 70
+                            lineNumber: 85
                         },
-                        __self: undefined
+                        __self: this
                     }),
-                    Object.keys(emailError).map((key)=>{
+                    Object.keys(birthdateError).map((key)=>{
                         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
                             __source: {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 73
+                                lineNumber: 88
                             },
-                            __self: undefined,
-                            children: emailError[key]
+                            __self: this,
+                            children: birthdateError[key]
                         }));
                     })
                 ]
-            })
-        }),
-        /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-            __source: {
-                fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 81
-            },
-            __self: undefined,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                    __source: {
-                        fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 82
-                    },
-                    __self: undefined,
-                    children: "Birthdate:"
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                    type: "date",
-                    value: birthdate,
-                    onChange: (e)=>setBirthdate(e.target.value)
-                    ,
-                    __source: {
-                        fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 83
-                    },
-                    __self: undefined
-                }),
-                Object.keys(birthdateError).map((key)=>{
-                    return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 86
-                        },
-                        __self: undefined,
-                        children: birthdateError[key]
-                    }));
-                })
-            ]
-        }),
-        /*#__PURE__*/ _jsxRuntime.jsxs("span", {
-            __source: {
-                fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 92
-            },
-            __self: undefined,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                    type: "submit",
-                    onClick: handleSubmit,
-                    __source: {
-                        fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 93
-                    },
-                    __self: undefined,
-                    children: "Submit"
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                    to: "/",
-                    __source: {
-                        fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 94
-                    },
-                    __self: undefined,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                        variant: "secondary",
-                        type: "button",
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("span", {
+                __source: {
+                    fileName: "src/components/registration-view/registration-view.jsx",
+                    lineNumber: 94
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                        type: "submit",
+                        onClick: handleSubmit,
                         __source: {
                             fileName: "src/components/registration-view/registration-view.jsx",
                             lineNumber: 95
                         },
-                        __self: undefined,
-                        children: "Back"
+                        __self: this,
+                        children: "Submit"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                        to: "/",
+                        __source: {
+                            fileName: "src/components/registration-view/registration-view.jsx",
+                            lineNumber: 96
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                            variant: "secondary",
+                            type: "button",
+                            __source: {
+                                fileName: "src/components/registration-view/registration-view.jsx",
+                                lineNumber: 97
+                            },
+                            __self: this,
+                            children: "Back"
+                        })
                     })
-                })
-            ]
-        })
-    ]
-}));
+                ]
+            })
+        ]
+    }));
+}
+_c = RegistrationView;
+var _c;
+$RefreshReg$(_c, "RegistrationView");
 
   $parcel$ReactRefreshHelpers$8dd4.postlude(module);
 } finally {

@@ -14,19 +14,19 @@ export function RegistrationView (props) {
             Password: password,
             Email: email,
             Birthday: birthday
-            })
+        })
         .then(response => {
             const data = response.data;
             console.log(data);
             window.open('/', '_self'); 
-    // so the page will open in the current tab
+            // so the page will open in the current tab
         })
         .catch(e => {
             console.log('error registering the user')
-    });
-
-    return (
-        <Form>
+        });
+    }
+         return (
+            <Form>
             <Row>
                 <Form.Group>
                     <Form.Label>Name:</Form.Label>
