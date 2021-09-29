@@ -25514,7 +25514,7 @@ const SET_Movies = 'SET_MOVIES';
 const SET_FILTER = 'SET_FILTER';
 function setMovies(value) {
     return {
-        type: SET_Movies,
+        type: SET_MOVIES,
         value
     };
 }

@@ -3,7 +3,7 @@ export const SET_FILTER = 'SET_FILTER';
 
 export function setMovies(value) {
     return { 
-        type: SET_Movies, 
+        type: SET_MOVIES, 
         value 
     };
 }
