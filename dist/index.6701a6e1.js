@@ -25610,7 +25610,7 @@ class MainView extends _reactDefault.default.Component {
     }
     render() {
         //const { movies, selectedMovie,  user } = this.state;
-        let { movie  } = this.props;
+        let { movies  } = this.props;
         let { user  } = this.state;
         //if (selectedMovie) return <MovieView movie={selectedMovie} />;
         // if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;

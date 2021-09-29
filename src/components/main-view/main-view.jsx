@@ -82,7 +82,7 @@ export class MainView extends React.Component {
         
             //const { movies, selectedMovie,  user } = this.state;
 
-            let { movie } = this.props;
+            let { movies } = this.props;
             let { user } = this.state;
             //if (selectedMovie) return <MovieView movie={selectedMovie} />;
 
