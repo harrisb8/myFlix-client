@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 
 export function RegistrationView (props) {
-
+    const url= 'https://angular-m.herokuapp.com/';
     const [ username, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ email, setEmail ] = useState('');
@@ -15,7 +15,7 @@ export function RegistrationView (props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-            axios.post('https://stormy-taiga-55813.herokuapp.com/users', {
+            axios.post(`${url}users`, {
             Username: username,
             Password: password,
             Email: email,
