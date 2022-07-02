@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import { url } from '../registration-view/registration-view';
 
 export function LoginView(props) {
     const [ username, setUsername ] = useState('');
@@ -10,7 +11,7 @@ export function LoginView(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         /*Send a request to the server for authentication */
-        axios.post('https://stormy-taiga-55813.herokuapp.com/login', {
+        axios.post(`${url}login`, {
             Username: username,
             Password: password
         })

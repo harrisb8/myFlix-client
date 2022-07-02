@@ -6,8 +6,10 @@ import Row from 'react-bootstrap/Row';
 import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 
+export const url= 'https://angular-m.herokuapp.com/';
+
 export function RegistrationView (props) {
-    const url= 'https://angular-m.herokuapp.com/';
+  
     const [ username, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ email, setEmail ] = useState('');
